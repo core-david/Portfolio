@@ -35,10 +35,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                   duration: 1,
                   transformOrigin: "left top",
                   delay: 0.5,
-                  stagger: {
-                    each: 0.1,
-                    from: "random",
-                  },
                 });
       
       tl.fromTo(".job-title", {
