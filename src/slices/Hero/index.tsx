@@ -7,6 +7,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import Bounded from '@/components/Bounded';
 import Shapes from './Shapes';
+import Button from "@/components/Button";
 
 /**
  * Props for `Hero`.
@@ -76,23 +77,31 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
         <Shapes />
         <div className="col-start-1 md:row-start-1">
-          <h1 className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold
-                         leading-none tracking-tighter"
-                         aria-label={
-                          slice.primary.firstname + " " + slice.primary.lastname
-                         }>
-            <span className="block text-slate-300">
+          <h1 className="mb-2 text-[clamp(3rem,18vmin,15rem)] font-extrabold
+                         leading-none tracking-tighter text-center">
+            <span className="block text-white">
               {renderLetters(slice.primary.firstname, "first")}
             </span>
-            <span className="-mt-[.2em] block text-slate-500">
+          </h1> 
+          <h1 className="mb-6 text-[clamp(3rem,15vmin,8rem)] font-extrabold
+                         leading-none tracking-tighter text-center">
+            <span className="-mt-[.1em] text-slate-200 block ">
             {renderLetters(slice.primary.lastname, "first")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-green-200
-                         to-yellow-500 bg-clip-text text-2xl font-bold uppercase
-                          tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+
+          <div className="flex items-center justify-center">
+            <span className="job-title inline-block bg-gradient-to-tr from-[#FEC524] via-yellow-200
+                            to-[#FEC524] bg-clip-text text-2xl font-bold uppercase
+                            tracking-[.1em] text-transparent opacity-0 md:text-4xl md:opacity-100">
               {slice.primary.tagline}
             </span>
+          <span className="ml-4"> {/* Add margin-left to create space between the elements */}
+              <Button className="job-title" linkField={slice.primary.button_link} label={slice.primary.button_text} />
+            </span>
+          </div>
+
+          
         </div>
       </div>
     </Bounded>
@@ -100,3 +109,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 };
 
 export default Hero;
+
+
+// text-slate-500

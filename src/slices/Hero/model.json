@@ -32,6 +32,21 @@
             "label": "tagLine",
             "placeholder": ""
           }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
